@@ -1,0 +1,27 @@
+﻿@using EmployeeMvc.Models;
+@model Employee[]
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+</head>
+<body>
+    <h3>Names of all employees</h3>
+    <div asp-validation-summary="All">
+        <ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @item.Name
+        </li>
+    }
+        </ul>
+        <a asp-controller="Employees" asp-action="Create">Add employee </a>
+    </div>
+
+</body>
+</html>
